@@ -8,11 +8,11 @@ app.set('view engine', 'ejs');    // 设置 template 引擎
 app.use(express.bodyParser());    // 读取请求 body 的中间件
 
 // 根据不同的客户端，返回不同的vtt下载链接
-app.get('/link2', function(req, res) {
+app.get('/link3', function(req, res) {
 	var link;
 	var userAgent = req.headers['user-agent'].toLowerCase();
 	if (userAgent.indexOf('android') > -1) {
-		link = 'market://details?id=com.tencent.mm';
+		link = 'https://play.google.com/store/apps/details?id=com.sensedevil.VTT';//'market://details?id=com.tencent.mm';
 	} else if (userAgent.indexOf('iphone') > -1) {
 		link = 'https://itunes.apple.com/app/id440650698';
 	} else if (userAgent.indexOf('ipad') > -1) {
