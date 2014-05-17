@@ -8,7 +8,7 @@ app.set('view engine', 'ejs');    // 设置 template 引擎
 app.use(express.bodyParser());    // 读取请求 body 的中间件
 
 // 根据不同的客户端，返回不同的vtt下载链接
-app.get('/link', function(req, res) {
+app.get('/link1', function(req, res) {
 	var link;
 	var userAgent = req.headers['user-agent'].toLowerCase();
 	if (userAgent.indexOf('android') > -1) {
