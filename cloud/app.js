@@ -22,6 +22,7 @@ app.get('/link', function(req, res) {
 	}
 	
 	res.writeHead(301, {"Location": link});
+	res.write("如果浏览器不能正常跳转，请点<a href=\"" + link + "\">这里</a>。");
     res.end();
 });
 
