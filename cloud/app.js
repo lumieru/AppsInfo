@@ -8,7 +8,7 @@ app.set('view engine', 'ejs');    // 设置 template 引擎
 app.use(express.bodyParser());    // 读取请求 body 的中间件
 
 // 根据不同的客户端，返回不同的vtt下载链接
-app.get('/link1', function(req, res) {
+app.get('/link2', function(req, res) {
 	var link;
 	var userAgent = req.headers['user-agent'].toLowerCase();
 	if (userAgent.indexOf('android') > -1) {
@@ -22,7 +22,8 @@ app.get('/link1', function(req, res) {
 	}
 	
 	//res.writeHead(301, {"Location": link});
-	res.render('print', { message: "如果浏览器不能自动跳转，请点<a href=\"" + link + "\">这里</a>。" });
+	res.write('如果浏览器不能自动跳转，请点<a href="' + link + '">这里</a>。');
+	//res.render('print', { message:  });
    // res.end();
 });
 
