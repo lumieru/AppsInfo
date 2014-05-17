@@ -19,11 +19,11 @@ app.get('/link', function(req, res) {
 	if (userAgent.indexOf('android') > -1) {
 		link = 'market://details?id=com.tencent.mm';
 	} else if (userAgent.indexOf('iphone') > -1) {
-		link = 'http://t.cn/8sfohxY';
+		link = 'https://itunes.apple.com/app/id440650698';
 	} else if (userAgent.indexOf('ipad') > -1) {
-		link = 'http://t.cn/8sfo20j';
+		link = 'https://itunes.apple.com/app/id443871575';
 	} else {
-		link = 'http://www.sensedevil.com';
+		link = 'http://www.sensedevil.com/games.html';
 	}
 	
 	res.writeHead(301, {"Location": link});
