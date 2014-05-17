@@ -56,7 +56,7 @@ app.get('/link3', function(req, res) {
 	} else {
 		res.setHeader("Content-Type", "text/html; charset=utf-8");
 		if(type == OPEN_IN_BROWSER) {
-			res.write('<html><head><title>虚拟乒乓球</title><style>div{text-align:left;margin:0;padding:0;}</style></head><body><div><label><p>请点击<span style="color:red">右上角的按钮</span></p></label><label><p>选择<span style="color:red">「' + browser + '」</span>即可正常下载</p></label></div></body></html>');
+			res.write('<html><head><title>虚拟乒乓球</title><meta name="viewport" content="width=device-width, initial-scale=1" /></head><body><label><p>请点击<span style="color:red">右上角的按钮</span></p></label><label><p>选择<span style="color:red">「' + browser + '」</span>即可正常下载</p></label></body></html>');
 		}	
 	}
    	res.end();
