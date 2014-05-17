@@ -22,7 +22,7 @@ app.get('/link2', function(req, res) {
 	}
 	
 	//res.writeHead(301, {"Location": link});
-	res.write('如果浏览器不能自动跳转，请点<a href="' + link + '">这里</a>。');
+	res.write('<html><title>下载《虚拟乒乓球》</title><body>如果浏览器不能自动跳转，请点<a href="' + link + '">这里</a>。</body></html>');
 	//res.render('print', { message:  });
    	res.end();
 });
