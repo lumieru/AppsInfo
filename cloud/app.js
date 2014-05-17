@@ -11,7 +11,6 @@ app.use(express.bodyParser());    // 读取请求 body 的中间件
 app.get('/link3', function(req, res) {
 	var REDIRECT = 0;
 	var OPEN_IN_BROWSER = 1;
-	var FAIL_TO_REDIRECT = 2;
 	
 	var type = REDIRECT;
 	var link;
@@ -36,16 +35,18 @@ app.get('/link3', function(req, res) {
 		}
 	} else if (userAgent.indexOf('iphone') > -1) {
 		if(userAgent.indexOf('micromessenger') > -1) {
-			type = FAIL_TO_REDIRECT;
+			type = OPEN_IN_BROWSER;
+			browser = '在Safari中打开';
+		} else {
+			link = 'https://itunes.apple.com/app/id440650698';
 		}
-		
-		link = 'https://itunes.apple.com/app/id440650698';
 	} else if (userAgent.indexOf('ipad') > -1) {
 		if(userAgent.indexOf('micromessenger') > -1) {
-			type = FAIL_TO_REDIRECT;
+			type = OPEN_IN_BROWSER;
+			browser = '在Safari中打开';
+		} else {
+			link = 'https://itunes.apple.com/app/id443871575';
 		}
-		
-		link = 'https://itunes.apple.com/app/id443871575';
 	} else {
 		link = 'http://www.sensedevil.com/games.html';
 	}
@@ -55,10 +56,7 @@ app.get('/link3', function(req, res) {
 	} else {
 		res.setHeader("Content-Type", "text/html; charset=utf-8");
 		if(type == OPEN_IN_BROWSER) {
-			res.write('<html><title>虚拟乒乓球</title><body><label><p>请点击<span style="color:red">右上角的按钮</span></p></label><label><p>选择<span style="color:red">「' + browser + '」</span>即可正常下载</p></label></body></html>');
-		} else {
-			//FAIL_TO_REDIRECT
-			res.write('<html><title>虚拟乒乓球</title><body>由于浏览器不能自动跳转，请点击<a href="' + link + '">《虚拟乒乓球》</a>来下载。</body></html>');
+			res.write('<html><head><title>虚拟乒乓球</title><style>div{text-align:left;margin:0;padding:0;}</style></head><body><div><label><p>请点击<span style="color:red">右上角的按钮</span></p></label><label><p>选择<span style="color:red">「' + browser + '」</span>即可正常下载</p></label></div></body></html>');
 		}	
 	}
    	res.end();
