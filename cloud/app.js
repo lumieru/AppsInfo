@@ -21,9 +21,9 @@ app.get('/link', function(req, res) {
 		link = 'http://www.sensedevil.com/games.html';
 	}
 	
-	res.writeHead(301, {"Location": link});
+	//res.writeHead(301, {"Location": link});
 	res.render('print', { message: "如果浏览器不能自动跳转，请点<a href=\"" + link + "\">这里</a>。" });
-    res.end();
+   // res.end();
 });
 
 // 最后，必须有这行代码来使 express 响应 HTTP 请求
