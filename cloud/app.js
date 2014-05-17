@@ -24,7 +24,7 @@ app.get('/link2', function(req, res) {
 	//res.writeHead(301, {"Location": link});
 	res.write('如果浏览器不能自动跳转，请点<a href="' + link + '">这里</a>。');
 	//res.render('print', { message:  });
-   // res.end();
+   	res.end();
 });
 
 // 最后，必须有这行代码来使 express 响应 HTTP 请求
