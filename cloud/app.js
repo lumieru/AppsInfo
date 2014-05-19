@@ -31,7 +31,7 @@ app.get('/link', function(req, res) {
 			browser = '用浏览器打开';
 		}  
 		else {
-			link = 'market://details?id=com.tencent.mm';
+			link = 'market://details?id=com.sensedevil.VTT';
 		}
 	} else if (userAgent.indexOf('iphone') > -1) {
 		if(userAgent.indexOf('micromessenger') > -1) {
