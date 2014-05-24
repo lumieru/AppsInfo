@@ -48,7 +48,7 @@ app.get('/link', function(req, res) {
 			link = 'https://itunes.apple.com/app/id443871575';
 		}
 	} else {
-		link = 'http://www.sensedevil.com/games.html';
+		link = 'http://www.wandoujia.com/apps/com.sensedevil.VTT'; //'http://www.sensedevil.com/games.html';
 	}
 	
 	if(type == REDIRECT) {
