@@ -33,9 +33,9 @@ app.get('/link', function(req, res) {
 			link = 'market://details?id=com.sensedevil.VTT';
 		}
 	} else if (userAgent.indexOf('iphone') > -1) {
-		link = 'https://itunes.apple.com/app/id440650698';
+		link = 'http://mp.weixin.qq.com/mp/redirect?url=https://itunes.apple.com/app/id440650698';
 	} else if (userAgent.indexOf('ipad') > -1) {
-		link = 'https://itunes.apple.com/app/id443871575';
+		link = 'http://mp.weixin.qq.com/mp/redirect?url=https://itunes.apple.com/app/id443871575';
 	} else {
 		link = 'http://www.wandoujia.com/apps/com.sensedevil.VTT'; //'http://www.sensedevil.com/games.html';
 	}
