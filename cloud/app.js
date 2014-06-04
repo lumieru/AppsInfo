@@ -23,8 +23,7 @@ app.get('/link', function(req, res) {
 			browser = '浏览器打开';
 		} else if(userAgent.indexOf('micromessenger') > -1) {
 			//android版微信
-			type = OPEN_IN_BROWSER;
-			browser = '在浏览器中打开';
+			link = 'http://fusion.qq.com/cgi-bin/qzapps/unified_jump?appid=10611855&from=wx&isTimeline=false&actionFlag=0%810%859ms=pname%3Dcom.sensedevil.VTT%26versioncode%3D2%26actionflag%3D0%26channelid%3D';
 		} else if(userAgent.indexOf('qq') > -1) {
 			//android版qq
 			type = OPEN_IN_BROWSER;
@@ -34,19 +33,9 @@ app.get('/link', function(req, res) {
 			link = 'market://details?id=com.sensedevil.VTT';
 		}
 	} else if (userAgent.indexOf('iphone') > -1) {
-		if(userAgent.indexOf('micromessenger') > -1) {
-			type = OPEN_IN_BROWSER;
-			browser = '在Safari中打开';
-		} else {
-			link = 'https://itunes.apple.com/app/id440650698';
-		}
+		link = 'https://itunes.apple.com/app/id440650698';
 	} else if (userAgent.indexOf('ipad') > -1) {
-		if(userAgent.indexOf('micromessenger') > -1) {
-			type = OPEN_IN_BROWSER;
-			browser = '在Safari中打开';
-		} else {
-			link = 'https://itunes.apple.com/app/id443871575';
-		}
+		link = 'https://itunes.apple.com/app/id443871575';
 	} else {
 		link = 'http://www.wandoujia.com/apps/com.sensedevil.VTT'; //'http://www.sensedevil.com/games.html';
 	}
