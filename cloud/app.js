@@ -33,9 +33,15 @@ app.get('/link', function(req, res) {
 			link = 'market://details?id=com.sensedevil.VTT';
 		}
 	} else if (userAgent.indexOf('iphone') > -1) {
-		link = 'http://mp.weixin.qq.com/mp/redirect?url=https://itunes.apple.com/cn/app/id440650698';
+		//此方法已经无效了，改用浏览器跳转
+		//link = 'http://mp.weixin.qq.com/mp/redirect?url=https://itunes.apple.com/cn/app/id440650698';
+		type = OPEN_IN_BROWSER;
+		browser = '在Safari中打开';
 	} else if (userAgent.indexOf('ipad') > -1) {
-		link = 'http://mp.weixin.qq.com/mp/redirect?url=https://itunes.apple.com/cn/app/id443871575';
+		//此方法已经无效了，改用浏览器跳转
+		//link = 'http://mp.weixin.qq.com/mp/redirect?url=https://itunes.apple.com/cn/app/id443871575';
+		type = OPEN_IN_BROWSER;
+		browser = '在Safari中打开';
 	} else {
 		link = 'http://www.wandoujia.com/apps/com.sensedevil.VTT'; //'http://www.sensedevil.com/games.html';
 	}
